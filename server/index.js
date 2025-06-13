@@ -9,6 +9,6 @@ app.get('/api/hello', (req, res) => {
     res.json({ message: 'Hello from backend!' });
 });
 
-app.listen(port, () => {
+apapp.listen(port, '0.0.0.0', () => {
     console.log(`Server listening on port ${port}`);
 });
