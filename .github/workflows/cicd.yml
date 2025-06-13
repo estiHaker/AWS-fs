@@ -16,22 +16,12 @@ jobs:
         host: ${{ secrets.EC2_HOST }}
         username: ubuntu
         key: ${{ secrets.EC2_SSH_KEY }}
-        # script: |
-        #   cd ~/AWS-fs
-        #   git pull origin main
-
-        #   cd client
-        #   npm install
-        #   npm run build
-
-        #   cd ../server
-        #   npm install
-        #   pm2 restart my-server || pm2 start npm --name my-server -- start
         script: |
-          # export NVM_DIR="$HOME/.nvm" 
-          # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-          # export PATH=$PATH:/usr/local/bin
-          # echo "PATH after: $PATH"
+          echo "PATH before: $PATH"
+          export NVM_DIR="$HOME/.nvm" 
+          [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+          export PATH=$PATH:/usr/local/bin
+          echo "PATH after: $PATH"
         
           cd ~/AWS-fs
           git pull origin main
