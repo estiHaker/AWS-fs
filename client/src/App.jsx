@@ -4,7 +4,7 @@ function App() {
   const [message, setMessage] = useState('');
 
   useEffect(() => {
-    fetch('http://16.170.159.49/api/hello')
+    fetch('/api/hello')
       .then(res => res.json())
       .then(data => setMessage(data.message))
       .catch(err => console.error('Fetch error:', err));
@@ -13,7 +13,7 @@ function App() {
   return (
     <div>
       <h1>Message from me:</h1>
-      <p>{message || 'Loading data...'}</p>
+      <p>{message || 'Loading...'}</p>
     </div>
   );
 }
